@@ -1,0 +1,68 @@
+\chapter{Developer Documentation}
+\thispagestyle{empty}
+\label{chap15}
+\section{Developer Documentation}
+
+eSim provides extensive documentation for developers and advanced users, facilitating contribution, extension, or internal customization.
+
+\subsection{Online Documentation Portal}
+The developer docs are maintained on Read the Docs, accessible here:
+\begin{itemize}
+  \item \textbf{eSim Developer Docs:} \url{https://esim.readthedocs.io/en/latest/} — covers architecture, conversion modules, simulation components, and more.
+\end{itemize}
+
+\subsection{Source Code and Documentation Directory}
+The technical documentation and related resources are located in the GitHub repository under:
+\begin{verbatim}
+https://github.com/FOSSEE/eSim/tree/master/code
+\end{verbatim}
+This directory includes detailed module descriptions, design rationale, and guides for plugin or extension development. 
+
+\subsection{Documentation Build Configuration}
+The documentation is built automatically via Read the Docs using Sphinx, with settings defined in:
+\begin{verbatim}
+.readthedocs.yaml
+\end{verbatim}
+This YAML file specifies:
+\begin{itemize}
+  \item Python interpreter version
+  \item Required dependencies
+  \item Build commands for producing HTML documentation
+\end{itemize}
+
+
+\subsubsection*{Continuous Integration}
+Recent updates (as of May 2025) include enhancements to `conf.py`, new documentation assets (`dev\_docs.png`), and a “Dev Docs” button in the eSim GUI, which launches the documentation portal directly. 
+
+\subsection{Building Documentation Locally}
+To build developer documentation locally:
+\begin{enumerate}
+  \item Clone the repository and install Sphinx:
+    \begin{verbatim}
+    git clone https://github.com/FOSSEE/eSim.git
+    cd eSim
+    pip install -r requirements.txt
+    \end{verbatim}
+  \item Build HTML docs:
+    \begin{verbatim}
+    sphinx-build -b html code/ docs/_build/html
+    \end{verbatim}
+  \item Alternatively, run:
+    \begin{verbatim}
+    sphinx-build -b html . _build/html
+    \end{verbatim}
+    which respects settings in `.readthedocs.yaml` and `conf.py`.
+
+\end{enumerate}
+
+\subsection{How to Contribute}
+Contributors can enhance the developer documentation by:
+\begin{itemize}
+  \item Editing files in the \texttt{code/} directory (e.g., `.rst`, Python docstrings).
+  \item Preview changes locally with Sphinx.
+  \item Creating a pull request on GitHub.
+\end{itemize}
+
+\begin{center}
+  {\color{red}\LARGE\textbf{Note:} For documentation questions or contribution guidance, visit the GitHub Issues page at \url{https://github.com/FOSSEE/eSim/issues} or contact us at \href{mailto:contact-esim@fossee.in}{contact‑esim@fossee.in}.}
+\end{center}
